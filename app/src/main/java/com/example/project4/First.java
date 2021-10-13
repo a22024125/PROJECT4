@@ -17,11 +17,11 @@ public class First extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
+    private static final int ARG_PARAM1 = 1; //what is final?
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
+    private int mParam1;
     private String mParam2;
 
     public First() {
@@ -40,7 +40,7 @@ public class First extends Fragment {
     public static First newInstance(String param1, String param2) {
         First fragment = new First();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        args.putInt(String.valueOf(ARG_PARAM1), 1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
@@ -50,7 +50,7 @@ public class First extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam1 = getArguments().getInt(String.valueOf(ARG_PARAM1));
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
